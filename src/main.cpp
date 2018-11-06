@@ -4,7 +4,7 @@
  ******************************************************************************/
 
 #include <Arduino.h>
-#include "DvG_ZeroTimer.h"
+#include "ZeroTimer.h"
 
 //#define TOGGLE_PIN 13
 #ifdef ARDUINO_ARCH_AVR
@@ -65,9 +65,9 @@ void loop() {
     tock = now;
 
     if (fToggle2) {
-      TC.setPeriod(10e3);
+      TC.setPeriod(5e3);  // Actually half period. 5e3 usec --> freq = 100 Hz
     } else {
-      TC.setPeriod(30e3);
+      TC.setPeriod(5e2);  // Actually half period. 500 usec --> freq = 1000 Hz
     }
     fToggle2 = not(fToggle2);
   }

@@ -2,11 +2,11 @@
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\system\samd\CMSIS\CMSIS\Include
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\system\samd\CMSIS-Atmel\CMSIS\Device\ATMEL
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\variants\arduino_mzero
--ID:\Electronics_ghost_copy\180729_Interrupt_timer_test\lib\ZeroTimer-master
--ID:\Electronics_ghost_copy\180729_Interrupt_timer_test\lib\Adafruit_ZeroTimer-master
--ID:\Electronics_ghost_copy\180729_Interrupt_timer_test\lib\Timer-master
--ID:\Electronics_ghost_copy\180729_Interrupt_timer_test\lib\TimerOne-master
--ID:\Electronics_ghost_copy\180729_Interrupt_timer_test\lib\avdweb_SAMDtimer-master
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\lib\ZeroTimer-master
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\lib\Adafruit_ZeroTimer-master
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\lib\Timer-master
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\lib\TimerOne-master
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\lib\avdweb_SAMDtimer-master
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\libraries\__cores__\samd\HID
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\libraries\__cores__\samd\I2S\src
 -IC:\Users\Dennis_van_Gils\.platformio\packages\framework-arduinosam\libraries\__cores__\samd\SAMD_AnalogCorrection\src
@@ -20,13 +20,15 @@
 -IC:\Users\Dennis_van_Gils\.platformio\packages\toolchain-gccarmnoneeabi\lib\gcc\arm-none-eabi\4.8.4\include
 -IC:\Users\Dennis_van_Gils\.platformio\packages\toolchain-gccarmnoneeabi\lib\gcc\arm-none-eabi\4.8.4\include-fixed
 -IC:\Users\Dennis_van_Gils\.platformio\packages\tool-unity
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\include
+-IE:\Work\_GitHub_repo\M0_Zero_Interrupt_timer_test\src
 -DF_CPU=48000000L
 -DUSBCON
--DPLATFORMIO=30600
+-DPLATFORMIO=30602
 -DARDUINO_SAMD_ZERO
 -DARDUINO_ARCH_SAMD
 -D__SAMD21G18A__
--DARDUINO=10805
+-DARDUINO=10618
 -DUSB_VID=0x2A03
 -DUSB_PID=0x804F
 -DUSB_PRODUCT="Arduino M0 Pro"

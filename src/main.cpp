@@ -16,7 +16,7 @@ DvG_SerialCommand sc(Ser);  // Instantiate serial command listener
 
 #define ANALOG_READ_RESOLUTION  12    // [bits] 10 or 12 for M0 Pro
 #define ANALOG_WRITE_RESOLUTION 10    // [bits] Fixed to 10 on M0 Pro
-#define INTERRUPT_CLOCK_PERIOD  100   // [usec]
+#define INTERRUPT_CLOCK_PERIOD  50    // [usec]
 
 double sine_freq = 133.33;   // [Hz]
 volatile uint32_t sine_out;

@@ -18,7 +18,7 @@ DvG_SerialCommand sc(Ser);  // Instantiate serial command listener
 #define INTERRUPT_CLOCK_PERIOD  50    // [usec]
 
 double sine_freq = 200.0;   // [Hz]
-volatile uint32_t sine_out;
+volatile uint16_t sine_out;
 
 /*------------------------------------------------------------------------------
     Sine wave look-up table (LUT)
@@ -33,14 +33,14 @@ volatile uint32_t sine_out;
 #define V_out_p2p    2.0      // [V] peak to peak
 #define V_out_center 2.0      // [V]
 
-uint32_t LUT_sine[N_LUT] = {0};
+uint16_t LUT_sine[N_LUT] = {0};
 volatile double LUT_micros_to_index_factor = 1e-6 * sine_freq * N_LUT;
 
 void create_LUT_sine() {
   const double offset = V_out_center / A_REF;
   const double amplitude = 0.5 / A_REF * V_out_p2p;
   for (int i = 0; i < N_LUT; i++) {
-    LUT_sine[i] = (uint32_t) round((pow(2, ANALOG_WRITE_RESOLUTION) - 1) * \
+    LUT_sine[i] = (uint16_t) round((pow(2, ANALOG_WRITE_RESOLUTION) - 1) * \
                   (offset + amplitude * sin(2*PI*i/N_LUT)));
   }
 }
@@ -49,9 +49,9 @@ void create_LUT_sine() {
     Interrupt service routine
 ------------------------------------------------------------------------------*/
 
-void myISR() {
-  uint32_t LUT_index;
-  LUT_index = ((uint32_t) round(micros() * LUT_micros_to_index_factor)) % N_LUT;
+void my_ISR() {
+  uint16_t LUT_index;
+  LUT_index = ((uint16_t) round(micros() * LUT_micros_to_index_factor)) % N_LUT;
   sine_out = LUT_sine[LUT_index];
 
   syncDAC();
@@ -68,7 +68,7 @@ void setup() {
 
   create_LUT_sine();
   DAC->CTRLA.bit.ENABLE = 0x01;
-  TC.startTimer(INTERRUPT_CLOCK_PERIOD, myISR);
+  TC.startTimer(INTERRUPT_CLOCK_PERIOD, my_ISR);
 }
 
 /*------------------------------------------------------------------------------

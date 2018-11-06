@@ -4,7 +4,7 @@
 */
 
 #include "Arduino.h"
-#include "DvG_ZeroTimer.h"
+#include "ZeroTimer.h"
 
 #define CPU_HZ 48000000
 #define TIMER_PRESCALER_DIV 1024

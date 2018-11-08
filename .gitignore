@@ -1,5 +1,8 @@
-\\.git/
-.pioenvs/
-.sconsign.dblite
-.clang_complete
-.gcc-flags.json
+.pio
+.pioenvs
+.piolibdeps
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
